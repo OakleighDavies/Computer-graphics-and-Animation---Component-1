@@ -1,0 +1,305 @@
+<h1>A short Pacman inspired Animation, made for CSC-20079 component 1</h1>
+<i>By Oakleigh, 23011795</i>
+
+					--------------------------------
+
+<h1>Featuring:</h1>
+
+<b>SCENE ONE: ZOOM/PAN; RANDOMISED FRACTAL TREES; PACMAN; BLINKY, INKY, PINKY, AND CLYDE;</b>
+<b>A BEAUTIFUL BACKDROP; ORIGINAL PELETS AND FRUITS; AND SOUND EFFECTS</b>
+<b>FROM THE ARCADE GAME.</b>
+
+<b>Graphical Elements:</b>
+
+<i>CAMERA:</i>
+<p>The camera uses a custom scale and zoom changing method, which at spawn in, zooms out to reveal</p>
+<p>the scene.</p>
+<p>The camera also pans as Pacman reaches 60% of camera's view, to actively keep him in scene</p>
+<p>until the end of the backdrop, to retain immersion.</p>
+
+<i>FRACTAL TREES:</i>
+<p>Each Fractal Tree is draw randomly, and are never the same.</p>
+<p>Each branch of each tree is assigned a thickness and colour depending on its depth on the</p>
+<p>tree.</p>
+<p>Perlin noise is used on select trees with the parameter turned on, to provide a swaying effect.</p>
+
+<p>Randomness: Every tree is given random rotational values which rotates its branches uniquely,</p>
+<p>making them all look different.</p>
+<p>Each tree also has random colours assigned to its petals, while remaining similar to a Cherry</p>
+<p>Tree; while some also use the custom Pacman primitive model for an added touch.</p>
+
+<i>BACKDROP:</i>
+<p>The lovely backdrop, behind all elements in Scene 1, depicts a desolate pathway during the dusk</p>
+<p>of an evening.</p>
+<p>The backdrop is fully hand-drawn, imported as a Image, and methods such as 'Glow' and 'Bloom'</p>
+<p>were used in the drawing tool to create the "light".</p>
+<p>I used Procreate to make this image, and exported as a .PNG as it allows for native alpha/</p>
+<p>transparency, and is very efficient on space.</p>
+
+<i>PACMAN:</i>
+<p>Pacman is displayed here using an 'ARC' primitive shape, and cached as a PShape for efficiency.</p>
+<p>Pacman is coloured here as it is in-keeping with the original game.</p>
+<p>Pacman's mouth opens and closes using cosine and sine functions on his X and Y coordinates,</p>
+<p>along with the ABSOLUTE sine of the system clock to open and close consistently.</p>
+<p>Pacman also contains a rudimentary circular "hitbox" to allow him to "eat" each pellet he gets</p>
+<p>close to.</p>
+
+<i>THE GHOSTS:</i>
+<p>All four ghosts: BLINKY, INKY, PINKY, and CLYDE, are drawn using primitive 'vertices', and</p>
+<p>joined together via lines.</p>
+<p>Each instance is coloured their original colours from the game, RED, BLUE, PINK, and, ORANGE;</p>
+<p>they also have an inbuilt "scared" mode.</p>
+<p>Each Ghost also has their own moveable eyes to allow them to look in different directions.</p>
+<p>Each Ghosts is stored as its own PShape, on its body type, for efficiency.</p>
+<p>The Ghosts have two body types, to give the illusion their "frills" are moving, changed in sync</p>
+<p>with each other based on the global frame count.</p>
+
+<p>Each Ghost has a set of eyes. These are stored as individual PShape graphics, and can be toggled</p>
+<p>between by updating each Ghost instance's "eyeDir" setter method.</p>
+<p>Each Ghost feature class also contains a method to make the Ghosts "scared" (izike), as a homage</p>
+<p>to the original game.</p>
+
+<i>PELLETS AND FRUITS:</i>
+<p>Each pellet is stored in an array of its class "Pellet", and it's shape is cached once via</p>
+<p>Processing's PShape graphics type.</p>
+<p>Every instance of Pellet contains collision detection using circle geometry, as a method to check</p>
+<p>if Pacman has closed in on it, so it can be "eaten". Each fruit is also the same, and is "eaten".</p>
+
+<p>All of the fruits used are external .PNG files, which have been imported and cached as PImages,</p>
+<p>and scaled down each, to a size that fits naturally.</p>
+<p>As is the case with each pellet, each fruit uses a circular hitbox which interacts with Pacman to</p>
+<p>disappear when "eaten".</p>
+
+
+<b>Auditory Elements:</b>
+<i>To enable sound, I have used the official Processing "Sound" library. Every sound has been extracted</i>
+<i>and converted to a .WAV/waveform audio file, via Mac Terminal, to ensure compatibility with the</i>
+<i>sound library.</i>
+
+<i>SPAWNING:</i>
+<p>The sound which can be heard during the zoom out/panning introduction. To signify he has spawned</p>
+<p>in/is spawning in.</p>
+
+<i>MOVING:</i>
+<p>This is the iconic sound heard when playing the original arcade or any similar remake when Pacman</p>
+<p>is moving around the maze.</p>
+<p>The movement sound is paused when Pacman is offscreen to back up his 'leaving' from the camera's</p>
+<p>view.</p>
+
+<i>POWER PELLET EATEN:</i>
+<p>This sound originally plays when Pacman eats a 'power pellet' and can chase the Ghosts and eat them,</p>
+<p>in the arcade game.</p>
+<p>The sound plays when Pacman is offscreen as he proceeds to chase the Ghosts into Scene 2.</p>
+
+					--------------------------------
+
+<b>SCENE TWO: THE PACMAN MAZE; PACMAN; BLINKY, INKY, PINKY, AND CLYDE; A FULL MAZE OF PELLETS;</b>
+<b>PACMAN CHERRIES; AND SOUND EFFECTS.</b>
+
+<b>Graphical Elements:</b>
+<i>PACMAN MAZE:</i>
+<p>The original Pacman maze shown, was taken, and upscaled to 4K for modern displays, but the</p>
+<p>edges still have a smoothed pixelated look as a homage to its original look. I also added</p>
+<p>some of the main fruits in the actual game in the top blocks as an added touch.</p>
+
+<i>PACMAN:</i>
+<p>This is the same Pacman PShape as used in scene one, but has been scaled down.</p>
+<p>Pacman is now able to move up, down, left, and right; by shifting his ARC shape in increments</p>
+<p>of PI.</p>
+
+<i>THE GHOSTS:</i>
+<p>Each ghost uses the same stored PShape as used in scene 1, like Pacman.</p>
+<p>Scene two demonstrates the ghost's up and down movements, along with their left and right.</p>
+
+<i>PELLLETS:</i>
+<p>The maze is fully stocked up with intractable/eatable pellets, using the aforementioned circle</p>
+<p>collisions. So any pellets Pacman hits along his pre-programmed path are "eaten".</p>
+
+<i>CHERRIES:</i>
+<p>As is the first fruit that appears, after playing the original game, this fruit appears</p>
+<p>in its regular location first, and is also something Pacman can "eat".</p>
+
+
+<b>Auditory Elements:</b>
+<i>To enable sound, I have used the official Processing "Sound" library. Every sound has been extracted</i>
+<i>and converted to a .WAV/waveform audio file, via Mac Terminal, to ensure compatibility with the</i>
+<i>sound library.</i>
+
+<i>MOVING:</i>
+<p>As used in scene one, I have added the background noise you hear when actually playing</p>
+<p>the original game itself!</p>
+
+<i>PACMAN DEFEATED:</i>
+<p>This is the sound heard when Pacman is defeated in the game, and at the end where he</p>
+<p>makes contact with Pinky.</p>
+
+					--------------------------------
+
+<b>SCENE THREE: SCROLLING CREDITS TEXT; CUSTOM FONTS AND STYLING; STILL ANIMATION SPRITES;</b>
+<b>2.5D PARALLAX</b>
+<b>SCROLLING; AND REFERENCES AND CREDITS.</b>
+
+<i>FILE TYPE:</i>
+<p>I used a plaintext .TXT file, as Processing only reads plaintext; which also meant I</p>
+<p>had to include a different styling system.</p>
+
+<i>CUSTOM FONT AND STYLING:</i>
+<p>I have chosen to use a fun "pixelated" looking font, to give the effect of a low density arcade</p>
+<p>display.</p>
+<p>I have also implemented an HTML-like style tagging system for text styles, so I could implement</p>
+<p>bold, italics, and heading text. I used Processing's graphical 'shear' function to shift the X down</p>
+<p>as the Y of the letter increases. Bold text is achieved via overlapping the same text twice;</p>
+<p>and heading text is increased in size.</p>
+
+<i>STILL-'MATION SPRITES & VERTICAL 2.5D:</i>
+<p>I chose to include some sprites/objects used in the game for added aesthetics during the Credits</p>
+<p>These sprites move up slower than the rest of the text which adds a form of 2.5D effect</p>
+
+					--------------------------------
+
+<b>REFERENCES:</b>
+<p>Pacman ARC Sprite. From week 2 and 3's lecture slides. (https://kle.keele.ac.uk/ultra/courses/</p>
+<p>_403264_1/outline/edit/document/_3341212_1courseId=_403264_1&view=content&state=view).</p>
+
+<p>Pacman Ghosts (used to trace over with Processing primitives). From: https://www.ssbwiki.com/Ghosts,</p>
+<p>on 03/02/2026.</p>
+
+<p>The IZIKE "scared" Ghost (for facial expression tracing and colour). From: https://pacman.fandom</p>
+<p>.com/wiki/Vulnerable_Ghost, on 08/02/2026.</p>
+
+<p>Recursive Fractal tree (basis of my random Pacman and blossom trees). From: https://processing.org/</p>
+<p>examples/tree.html, by Daniel Shiffman, on 06/02/2026.</p>
+
+<p>Pink blossom colours. From: https://www.pinterest.com/pin/pink-spring-blossom-colour-combo-42--</p>
+<p>592293788515979963/, by fabmoodmag, on 20/02/2026.</p>
+
+<p>Power pellet outline (UNUSED). From: https://www.pixilart.com/krizmsmith67/albums/pacman-20437,</p>
+<p>by Kristopher, on 21/02/2026.</p>
+
+<p>Pacman spawning in sound. From: https://samplefocus.com/samples/pacman-opening-song, by Pari,</p>
+<p>on 22/02/2026.</p>
+
+<p>Internal sound monitoring (for recording audio used). From: https://github.com/ExistentialAudio/</p>
+<p>BlackHole?tab=readme-ov-file, by Steffan Andrews, on 22/02/2026.</p>
+
+<p>Pacman fruits. From: https://pacman.fandom.com/wiki/Fruits, on 27/02/2026.</p>
+
+<p>Power pellet eaten sound (UNUSED). From: https://www.myinstants.com/en/instant/pac-man-power-</p>
+<p>pellet-66997/, by wazza, on 28/02/2026.</p>
+
+<p>Pacman maze outline image (used to upscale to 4K). From: https://pacman.fandom.com/wiki/Pac-Man</p>
+<p>_Maze, on 01/03/2026.</p>
+
+<p>Pelet_array_builder class. Inspired by ChatGPT, implemented and adapted by me. From: www.chatgpt.com</p>
+
+<p>Original arcade game Ghost chase behaviors. From: https://pacman.fandom.com/wiki/Maze_Ghost_AI_</p>
+<p>Behaviors, on 11/03/2026.</p>
+
+<p>Credits text inspired by the Coursework Literacy presentation, on the KLE (https://kle.keele.ac.uk/</p>
+<p>ultra/courses/_403264_1/outline/edit/document/_4015730_1?courseId=_403264_1&view=content&state=view).</p>
+
+<p>The use of ChatGPT and MS-Copilot was solely for developing ideas around how to execute this</p>
+<p>animation, and to receive suggestions on how to improve it, and for suggestive debugging purposes.</p>
+
+<i>Vertically scrolling centred credits displayed text with font "PublicPixel", in the colour white.</i>
+
+					--------------------------------
+
+<b>EXTRAS:</b>
+
+<i>SOUNDS:</i>
+<p>I have implemented boolean logic to prevent all sounds playing over the top of each other.</p>
+
+<i>EXTRA PROGRAMMING CONSTRUCTS:</i>
+<p>RANDOMNESS EXPLAINED:</p>
+<p>When I randomise in fractal trees, I make reference to the system's inbuilt millis()/</p>
+<p>clock for randomized seeds. This constrains the trees to tree shape, but means that</p>
+<p>every tree is never the same across runtimes.</p>
+
+<p>RECURSIONS:</p>
+<p>I use recursive sub-routines in the generation of object arrays, and during recursive</p>
+<p>object generation; I.e.: tree blossom/Pacmen.</p>
+<p>I also use recursion when reading from this Credits .TXT file.</p>
+
+<p>RENDER PIPELINE:</p>
+<p>I have chosen to use the "P2D", Processing 2D, pipeline as I constricts my ability to only render</p>
+<p>2D object, which ensure remaining inside the assessment specification. The P2D pipeline also</p>
+<p>renders using OpenGL, rather than the default JAVA2D pipeline, for complex 2D graphics.</p>
+<p>P2D adds a third renderer thread, over default JAVA2D, which uses the GPU over the CPU to</p>
+<p>render. P2D also enables buffering and caching, which lets me use PGrahpics to pre-render</p>
+<p>the shape once and render it when called, 'x' amount of times. (According to ChatGPT and the</p>
+<p>Processing reference.</p>
+
+<p>CAMERA PANNING:</p>
+<p>The panning in scene 1, is done across a 4K image, which is wider than a standard display.</p>
+<p>This was designed to add extra immersion, and show the entities in scene one moving across the scene.</p>
+
+<b>this.seed = (int)(System.nanoTime() & 0x7fffffff);</b>
+<p>This line of code makes use of Java "long"'s and the full system clock, to plant a random seed.</p>
+<p>Long are 64-bit, compared to the 32-bit integer I cast it into. 0x7fffffff is a bitmask which</p>
+<p>effectively executes an ABSOLUTE function to force the number to be positive. This is done</p>
+<p>instead of having an int originally, is because nanoTime() is a long.</p>
+
+<p>SWITCHES:</p>
+<p>I opted to use a switch in the case of cases which are ALWAYS between the same choices, this</p>
+<p>includes the ghost movements for up, down, left, and right.</p>
+
+<p>INDEVIDUAL TABS FOR CLASSES AND MAJOR HELPERS:</p>
+<p>It is good and common practice to have separate "files" for each class, as it separates major</p>
+<p>blocks of code and makes its modular and easier to debug.</p>
+
+<p>GETTERS AND SETTERS</p>
+<p>As is good practice, locally used variables and kept private or protected so they aren't</p>
+<p>interacted with between instances or classes. So getters and setters are used to view and set</p>
+<p>these variables outside of class itself.</p>
+
+<b>// Current animation starting point</b>
+<b>boolean Scene_1 = false;</b>
+<b>boolean Scene_2 = false;</b>
+<b>boolean Credits = false;</b>
+<p>I have set up a boolean start point for debugging purposes. This allows someone with the source</p>
+<p>code to initiate the animation from any scene.</p>
+
+
+<b>PRINCIPLES OF ANIMATION:</b>
+<i>Referring to Week 4 slides "CSC-20079 Principles of Animation v2.pptx"</i>
+
+<p>SQUASH AND STRETCH:</p>
+<p>In the form of zoom and pan. In scene one where the camera starts very zoomed in, and zooms</p>
+<p>out to reveal Pacman, the pellets, and the fruits.</p>
+<p>The camera also pans across the screen when Pacman reaches 60% progression, and focuses on him.</p>
+
+<p>STAGING:</p>
+<p>Staging and camera advantage is given to the main character, Pacman. The camera follows</p>
+<p>Pacman in scene 1.</p>
+
+<p>STRAIGHT AHEAD ANIMATION:</p>
+<p>Given the nature of procedurally generated animations, each frame and character is generated</p>
+<p>chronologically.</p>
+
+<p>SECONDARY ACTION:</p>
+<p>The sounds used for Pacman in both scenes stop and play at certain points.</p>
+<p>In scene one, Pacman's eating noise stops when he exits the screen, and in scene two, his defeated</p>
+<p>sound plays right as he is contacted by Pinky.</p>
+<p>In scene one, the ghosts appear after Pacman moves, to indicate a chase, and follow him off</p>
+<p>the screen, and run from him while he is still off the screen to indicate past and following</p>
+<p>actions.</p>
+
+<p>APPEAL:</p>
+<p>Pacman in scene one is chased and intimidated by the ghosts, but manages to find a power pellet</p>
+<p>off scene, and chases the ghosts back, into scene two (the Pacman maze).</p>
+<p>The ghosts in scene two, follow the same "AI" as those in the original arcade game, showing off</p>
+<p>intentional movements and strategy, even if not immediately apparent.</p>
+
+					--------------------------------
+
+<b>It was a pleasure creating this first component for Computer Graphics and Animation --</b>
+<b>CSC-20079. Thank you for watching.</b>
+
+
+<b>Component 1 © 2026 Oakleigh Davies</b>
+<b>Licensed under Creative Commons Attribution 4.0 (CC-BY-SA 4.0)</b>
+
+<b>Source code available under GNU GPL-3.0</b>
+
+<i>(QR made locally on Mac)</i>
