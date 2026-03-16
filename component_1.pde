@@ -47,9 +47,9 @@ Camera_helper backdrop, pacMaze;
 SoundFile Pacman_spawnin, Pacman_movement, Power_pellet_eaten, Pacman_defeated;
 
 // Current animation starting point
-boolean Scene_1 = false;
+boolean Scene_1 = true;
 boolean Scene_2 = false;
-boolean Credits = true;
+boolean Credits = false;
 
 private PShape floor;
 
