@@ -14,7 +14,7 @@ int deleyTime = 20000;
 boolean timerActive = false;
 
 void startCredits() {
-  frameRate(1000);
+  frameRate(120);
 
   creditsY = height; // init for height of credits page
 
